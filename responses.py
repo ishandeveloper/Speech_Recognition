@@ -20,4 +20,6 @@ def respond(voice_data):
         url='https://google.com/maps/place/'+location+'/&amp;'
         webbrowser.get().open(url)
         say("Here's The Location Of "+location)
-    
+    if 'exit' or 'stop listening' in voice_data:
+        exit()
+
