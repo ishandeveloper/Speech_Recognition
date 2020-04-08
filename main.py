@@ -1,5 +1,7 @@
 import speech_recognition as sr
 from time import ctime
+import webbrowser
+
 r=sr.Recognizer()
 
 def listen_audio():
@@ -19,7 +21,10 @@ def respond(voice_data):
         print("Hey, I'm Jarvis.")
     if 'time' in voice_data:
         print(ctime())
-
+    if 'search' in voice_data:
+        print('What do you want to search for?')
+        search=listen_audio()
+        
 print("Jarvis >> How Can I Help You ?")
 voice_data=listen_audio()
 print("You    >> "+voice_data)
