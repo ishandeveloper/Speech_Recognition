@@ -8,7 +8,6 @@ def listen_audio():
         voice_data=''
         try:
             voice_data=r.recognize_google(audio)
-            print(voice_data)
         except sr.UnknownValueError:
             print("I didn't get that")
         except sr.RequestError:
@@ -17,7 +16,7 @@ def listen_audio():
 
 print('How Can I Help You ?')
 voice_data=listen_audio()
-
+print(voice_data)
         
 
         
