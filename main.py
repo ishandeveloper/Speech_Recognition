@@ -24,7 +24,9 @@ def respond(voice_data):
     if 'search' in voice_data:
         print('What do you want to search for?')
         search=listen_audio()
-        
+        url='https://google.com/search?q='+search
+        webbrowser.get().open(url)
+        print("Here's what I found for "+search)
 print("Jarvis >> How Can I Help You ?")
 voice_data=listen_audio()
 print("You    >> "+voice_data)
