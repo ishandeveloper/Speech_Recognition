@@ -1,5 +1,5 @@
 import speech_recognition as sr
-
+from time import ctime
 r=sr.Recognizer()
 
 def listen_audio():
@@ -14,9 +14,17 @@ def listen_audio():
             print('Sorry, Speech Service Is Down')
         return voice_data
 
-print('How Can I Help You ?')
+def respond(voice_data):
+    if 'what is your name' in voice_data:
+        print("Hey, I'm Jarvis.")
+    if 'time' in voice_data:
+        print(ctime())
+
+print("Jarvis >> How Can I Help You ?")
 voice_data=listen_audio()
-print(voice_data)
+print("You    >> "+voice_data)
+respond(voice_data)
+
         
 
         
